@@ -1,12 +1,18 @@
 from socket import socket, AF_INET, SOCK_STREAM
+import json
+
+from data.data import DataOut
 
 
 class Connector:
     def __init__(self, ip: str, port: int):
         self.ip: str = ip
         self.port: int = port
+        self._s: socket = socket(AF_INET, SOCK_STREAM)
 
     def connect(self):
-        s = socket(AF_INET, SOCK_STREAM)
-        s.connect((self.ip, self.port))
+        self._s.connect((self.ip, self.port))
         print('Соединение успешно установленно')
+
+    def send_data(self, data: DataOut):
+        self._s.send(json.dumps(data, default=lambda o: o.__dict__).encode())
