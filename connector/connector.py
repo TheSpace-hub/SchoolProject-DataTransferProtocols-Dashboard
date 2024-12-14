@@ -15,7 +15,7 @@ class Connector:
         print('Соединение успешно установленно')
 
     def send_data(self, data: DataOut):
-        self._s.send(json.dumps(data, default=lambda o: o.__dict__).encode())
+        self._s.send((json.dumps(data, default=lambda o: o.__dict__) + '\n').encode())
 
     def get_data(self) -> DataIn:
         return json.loads(self._s.recv(1024), object_hook=lambda d: DataIn(**d))
