@@ -12,10 +12,50 @@ class ButtonHandler:
         self._last_k2 = False
         self._last_k3 = False
         self._last_k4 = False
-        self._last_k5= False
+        self._last_k5 = False
         self._last_k6 = False
         self._last_k7 = False
         self._last_red_key = False
+
+    def k1_status(self, status: bool) -> None:
+        if status == False and self._last_k1 == True:
+            self._last_k1 = False
+            self.k1 += 1
+
+    def k2_status(self, status: bool) -> None:
+        if status == False and self._last_k2 == True:
+            self._last_k2 = False
+            self.k2 += 1
+
+    def k3_status(self, status: bool) -> None:
+        if status == False and self._last_k3 == True:
+            self._last_k3 = False
+            self.k3 += 1
+
+    def k4_status(self, status: bool) -> None:
+        if status == False and self._last_k4 == True:
+            self._last_k4 = False
+            self.k4 += 1
+
+    def k5_status(self, status: bool) -> None:
+        if status == False and self._last_k5 == True:
+            self._last_k5 = False
+            self.k5 += 1
+
+    def k6_status(self, status: bool) -> None:
+        if status == False and self._last_k6 == True:
+            self._last_k6 = False
+            self.k6 += 1
+
+    def k7_status(self, status: bool) -> None:
+        if status == False and self._last_k7 == True:
+            self._last_k7 = False
+            self.k7 += 1
+
+    def red_key_status(self, status: bool) -> None:
+        if status == False and self._last_red_key == True:
+            self._last_red_key = False
+            self.red_key += 1
 
     def get_active_keys(self):
         keys = []
