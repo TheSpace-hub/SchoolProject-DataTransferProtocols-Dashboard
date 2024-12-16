@@ -57,7 +57,7 @@ class ButtonHandler:
             self._last_red_key = False
             self.red_key += 1
 
-    def get_active_keys(self):
+    def get_active_keys(self) -> list:
         keys = []
         if self.k1 > 0:
             keys.append('k1')
@@ -83,3 +83,4 @@ class ButtonHandler:
         if self.red_key > 0:
             keys.append('red_key')
             self.red_key -= 1
+        return keys
