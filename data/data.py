@@ -1,3 +1,7 @@
+from controller.button_viewer import ButtonViewer
+
+viewer = ButtonViewer()
+
 class DataIn:
     def __init__(self, level: int):
         self.level: int = level
@@ -13,3 +17,12 @@ class DataOut:
         self.k6 = k6
         self.k7 = k7
         self.red_key = red_key
+    
+    def generate(self):
+        for pin in range(7):
+            print(pin + 1,  end=' | ')
+        print()
+        for pin in range(7):
+            print(viewer.get_key_status(pin), end=' | ')
+        print()
+
