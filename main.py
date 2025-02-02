@@ -4,15 +4,13 @@ from data.data import DataOut
 import time
 
 def main():
-    # c = connector.connector.Connector('127.0.0.1', 25570)
-    # c.connect()
-    d = DataOut(False, False, False, False, False, False, False, False)
+    c = connector.connector.Connector('185.220.37.105', 25570)
+    c.connect()
+    d = DataOut(False, False, False, False, False, False, False)
     while True:
-        # c.send_data()
+        c.send_data(d)
         d.generate()
-        print('Tick')
-        time.sleep(0.1)
-        # print(c.get_data().level)
+        c.get_data()
 
 
 if __name__ == '__main__':

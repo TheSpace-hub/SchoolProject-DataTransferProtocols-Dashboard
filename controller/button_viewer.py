@@ -9,5 +9,5 @@ class ButtonViewer:
             gpio.setup(pin, gpio.IN, pull_up_down=gpio.PUD_UP)
 
     def get_key_status(self, key: int):
-        return gpio.input(self.pins[key])
+        return not bool(gpio.input(self.pins[key]))
 
