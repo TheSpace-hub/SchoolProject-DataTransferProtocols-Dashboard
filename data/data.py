@@ -1,6 +1,6 @@
 from controller.button_viewer import ButtonViewer
 
-viewer = ButtonViewer()
+viewer = ButtonViewer(True)
 
 class DataIn:
     def __init__(self, level: int):

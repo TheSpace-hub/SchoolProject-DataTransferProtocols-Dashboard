@@ -4,13 +4,14 @@ from data.data import DataOut
 import time
 
 def main():
-    c = connector.connector.Connector('185.220.37.105', 25570)
-    c.connect()
+    c = connector.connector.Connector('http://dyachkov-project.ru/update')
     d = DataOut(False, False, False, False, False, False, False)
     while True:
         c.send_data(d)
         d.generate()
-        c.get_data()
+
+        print('Send some data')
+        time.sleep(10)
 
 
 if __name__ == '__main__':
