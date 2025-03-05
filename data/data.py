@@ -1,6 +1,6 @@
 from controller.button_viewer import ButtonViewer
 
-viewer = ButtonViewer(True)
+viewer = ButtonViewer(False)
 
 class DataIn:
     def __init__(self, level: int):
@@ -18,12 +18,6 @@ class DataOut:
         self.k7 = k7
     
     def generate(self):
-        # for pin in range(7):
-        #     print(pin + 1,  end=' | ')
-        # print()
-        # for pin in range(7):
-        #     print(viewer.get_key_status(pin), end=' | ')
-        # print()
         self.k1 = viewer.get_key_status(0)
         self.k2 = viewer.get_key_status(1)
         self.k3 = viewer.get_key_status(2)
