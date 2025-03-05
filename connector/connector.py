@@ -10,7 +10,7 @@ class Connector:
 
 
     def send_data(self, data_out: DataOut):
-        data_str = str(json.dumps(data_out, default=lambda o: o.__dict__).encode())
+        data_str = str(json.dumps(data_out, default=lambda o: o.__dict__))
         print(f'Data: {data_str}')
         response = requests.post(self.host, json={'data': data_str})
 
