@@ -9,9 +9,8 @@ def main():
     while True:
         c.send_data(d)
         d.generate()
-
-        print('Send some data')
-        time.sleep(10)
+        
+        time.sleep(0.1)
 
 
 if __name__ == '__main__':
